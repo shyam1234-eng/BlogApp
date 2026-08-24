@@ -14,6 +14,9 @@ const carouselItems = document.querySelectorAll(".carousel-item");
 let currentIndex = 0;
 const prevButton = document.querySelector(".carouselPrev");
 const nextButton = document.querySelector(".carouselNext");
+if (!carouselItems.length || !prevButton || !nextButton) {
+  console.log("Carousel is not present on this page.");
+} else {
 function showSlide(index) {
   // logic to print image based on index
   for (let i = 0; i < carouselItems.length; i++) {
@@ -45,4 +48,5 @@ setInterval(() => {
   }
   showSlide(currentIndex);
 }, 2000);
+}
 
