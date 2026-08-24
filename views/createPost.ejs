@@ -1,0 +1,51 @@
+<%- include("partials/header") %>
+
+<main class="main-create--container">
+  <div class="create-container">
+    <form action="/createPost" method="post" class="input-post">
+      <div class="main-view">
+        <input
+          class="title-summary title-title"
+          type="text"
+          placeholder="Title..."
+          name="title"
+        />
+        <hr />
+        <textarea
+          class="title-summary summary-summary"
+          id="content-editor"
+          name="summary"
+          placeholder="Start writing your story here..."
+          rows="15"
+          cols="60"
+          spellcheck="true"
+          autocomplete="on"
+        ></textarea>
+
+        <div class="author-thumbnail">
+          <div class="thumbnail-thumbnail">
+            <label for="image-picker">Upload thumbnail:</label>
+            <input
+              type="file"
+              id="image-picker"
+              name="image"
+              accept="image/png, image/jpeg, image/webp"
+            />
+          </div>
+          <div class="author-author">
+            <input type="text" placeholder="author" name="author" />
+            <input type="date" placeholder="date" name="publishedAt" />
+          </div>
+        </div>
+        <hr />
+        <div class="post-action">
+          <div class="publish">
+            <button type="submit">Publish</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<%- include("partials/footer") %>

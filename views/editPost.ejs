@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+
+<main class="main-create--container">
+  <div class="create-container">
+    <form action="/patch/<%= blog.id %>?_method=PATCH" method="post" class="input-post">
+      <div class="main-view">
+        <input class="title-summary title-title" type="text" name="title" value="<%= blog.title %>" />
+        <hr />
+        <textarea class="title-summary summary-summary" name="summary" rows="15" cols="60"><%= blog.summary %></textarea>
+
+        <div class="author-thumbnail">
+          <div class="author-author">
+            <input type="text" name="author" value="<%= blog.author.name %>" />
+            <input type="date" name="publishedAt" value="<%= blog.publishedAt.slice(0, 10) %>" />
+          </div>
+        </div>
+        <hr />
+        <div class="post-action">
+          <button type="submit">Save Changes</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<%- include("partials/footer") %>

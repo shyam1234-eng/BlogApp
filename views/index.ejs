@@ -1,0 +1,94 @@
+<%- include("partials/header") %>
+
+<main class="main">
+  <div class="hero">
+    <section class="hero-section content">
+      <div class="weather-report hero-data">weather report</div>
+      <div class="new-blog--posts hero-data carousel">
+        <div class="carouselInner">
+          <div class="carousel-item active">
+            <img src="/images/carousel-images/ai.jpg" alt="ai">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/carousel-images/agritech-building.png" alt="agritech">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/carousel-images/html.png" alt="html">
+          </div>
+        </div>
+        <button type="submit" class="carouselPrev"><</button>
+        <button type="submit" class="carouselNext">></button>
+      </div>
+    </section>
+  </div>
+  <div class="article-aside">
+   <% if(locals.blogs){ %> 
+    <section class="article-section content">
+     <% blogs.forEach((blog)=>{ %>
+        <div class="blog-posts">
+        <div class="thumbnail blog-element">
+          <img
+            src="/images/blogimages/ambient.png"
+            alt="Concept art showing ambient smart home sensors blended into wall architecture"
+          />
+        </div>
+        <div class="title blog-element">
+          <h3><%= blog.title %></h3>
+        </div>
+        <div class="summary blog-element">
+          <p>
+            <%= blog.summary %>
+          </p>
+        </div>
+        <div class="author blog-element">
+          <p>Author: <%= blog.author.name %></p>
+        </div>
+        <div class="published-date blog-element">
+          <p>Published: <%= blog.publishedAt %></p>
+        </div>
+        <div class="published-date blog-element">
+           <a href="/edit/<%= blog.id %>"><button type="submit">Edit</button></a>
+        </div>
+
+        <div class="published-date blog-element">
+          <form action="/delete/<%= blog.id %>?_method=DELETE" method="post">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+     <% }) %>
+    </section>
+    <% } %>
+    <section class="aside-section content">
+      <div class="recent-posts aside-posts">
+        <div><h3>Recent Posts</h3></div>
+        <div>
+          <div>Post 1</div>
+          <div>Post 2</div>
+          <div>Post 3</div>
+        </div>
+      </div>
+      <div class="most-viewed aside-posts">
+        <div><h3>Most Viewed</h3></div>
+        <div>Post 1</div>
+        <div>Post 2</div>
+        <div>Post 3</div>
+      </div>
+      <div class="social-links aside-posts">
+        <div><h3>Social Links</h3></div>
+        <div>Social 1</div>
+        <div>Social 2</div>
+        <div>Social 3</div>
+        <div>Social 3</div>
+        <div>Social 3</div>
+        <div>Social 3</div>
+        <div>Social 3</div>
+        <div>Social 3</div>
+        <div>Social 3</div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<%- include("partials/footer") %>
+

@@ -1,0 +1,15 @@
+.footer-section {
+  width: 100%;
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  color: white;
+}
+.footer-middle .social-media {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+}
